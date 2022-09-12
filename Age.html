@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <title>Age Converter</title>
+    <style>
+        body {
+            margin-left: 22rem;
+            background: radial-gradient(rgb(84, 125, 237), rgb(26, 216, 184));
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1 class="display-4 text-center pt-4 mb-4">AGE Converter </h1>
+                <form>
+                    <div class="form-group">
+                        <input 
+                        id="lbsInput" 
+                        type="number" 
+                        class="form-control form-control-lg" 
+                        placeholder="Enter Age in Year ----">
+                    </div>
+                </form>
+
+                <br>
+                <div id="output">
+
+                    <div class="card bg-info form-control mb-2">
+                        <div class="card-block">
+                            <h4>Months:</h4>
+                            <div id="moOutput"></div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-primary form-control mb-2">
+                        <div class="card-block">
+                            <h4>Days:</h4>
+                            <div id="daOutput"></div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-success form-control mb-2">
+                        <div class="card-block">
+                            <h4>Hours</h4>
+                            <div id="hoOutput"></div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-danger form-control mb-2">
+                        <div class="card-block">
+                            <h4>Minutes:</h4>
+                            <div id="miOutput"></div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-secondary form-control mb-2">
+                        <div class="card-block">
+                            <h4>Seconds:</h4>
+                            <div id="seOutput"></div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        //  to remove at the time of fresh that there is no-card so do that
+        document.getElementById('output').style.visibility = 'hidden';  // hidden the card first
+
+
+
+        document.getElementById('lbsInput').addEventListener('input', function(e) {
+            //console.log(123)
+            document.getElementById('output').style.visibility = 'visible';  // with input you will see the card
+            let look = e.target.value;
+            //console.log(look)
+            document.getElementById('moOutput').innerHTML = look*12;  // convert pound to Kg
+            document.getElementById('daOutput').innerHTML = look*365;  // convert pound to Kg
+            document.getElementById('hoOutput').innerHTML = look*365*24;  // convert pound to Kg
+            document.getElementById('miOutput').innerHTML = look*365*24*60;
+            document.getElementById('seOutput').innerHTML = look*365*24*60*60;
+        }) 
+    </script>
+</body>
+</html>
